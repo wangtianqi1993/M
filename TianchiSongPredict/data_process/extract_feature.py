@@ -16,7 +16,7 @@ def extract_feature(artist_id):
     play_times = []
     predict_times = []
     feature = []
-    for item in db.artist_times.find({"artist_id":artist_id}).sort("date"):
+    for item in db.artist_times.find({"artist_id": artist_id}).sort("date"):
         play_times.append(item['play_times'])
 
     # remove 3.31 5.31 7.31
@@ -35,8 +35,6 @@ def extract_feature(artist_id):
             predict_data2 = [play_times[i+120], play_times[i+150]]
             temp = [predict_data1, predict_data2]
             predict_times.append(temp)
-
-
 
     return feature, predict_times
 

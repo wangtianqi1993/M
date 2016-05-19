@@ -31,3 +31,24 @@ def auti_norm(normal_data, ranges, min_val):
     for i in range(len(normal_data)):
         auti_data[i] = normal_data[i]*ranges+min_val
     return auti_data
+
+
+def get_list_max(input_data, input_data1):
+    """
+    get the max data in the list, using for input data normalized
+    :param input_data:
+    :return:
+    """
+    max_data = 0.0
+    for item in input_data:
+        temp = max(item[0])
+        if max_data < temp:
+            max_data = temp
+
+    for item in input_data1:
+        temp = max(item[0])
+        if max_data < temp:
+            max_data = temp
+
+    max_data = 1.3*float(max_data)
+    return max_data

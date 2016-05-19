@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" line="232" mnemonic="9" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="6eb9652b-01f4-474f-9795-1decfe80c7e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/__init__.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/load_data_set.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/MachineLearningComputation.iml" afterPath="$PROJECT_DIR$/.idea/MachineLearningComputation.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TianchiSongPredict/data_process/analyse_data.py" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/analyse_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/predict/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TianchiSongPredict/predict/bpnn_predict.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" afterPath="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py" afterPath="$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MachineLearningComputation.iws" />
@@ -56,13 +50,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bpnn.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bpnn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.48945785">
-              <caret line="203" column="42" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="156" column="58" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="58" />
               <folding>
                 <element signature="e#66#77#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bpnn_predict.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TianchiSongPredict/predict/bpnn_predict.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.7944079">
+              <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+              <folding>
+                <element signature="e#66#76#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -82,7 +88,7 @@
         <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="32" column="28" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+              <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -102,27 +108,7 @@
         <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pyplot.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/lib/pymodules/python2.7/matplotlib/pyplot.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="3379" column="4" selection-start-line="3379" selection-start-column="4" selection-end-line="3379" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cursor.py" pinned="false" current-in-tab="false">
-        <entry file="file:///usr/local/lib/python2.7/dist-packages/pymongo/cursor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="656" column="0" selection-start-line="656" selection-start-column="0" selection-end-line="656" selection-end-column="0" />
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -132,7 +118,7 @@
         <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/data_processing.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
+              <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="48" />
               <folding />
             </state>
           </provider>
@@ -156,6 +142,8 @@
         <option value="$PROJECT_DIR$/TianchiSongPredict/data_process/analyse_data.py" />
         <option value="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py" />
         <option value="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" />
+        <option value="$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py" />
+        <option value="$PROJECT_DIR$/TianchiSongPredict/predict/bpnn_predict.py" />
       </list>
     </option>
   </component>
@@ -224,42 +212,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachineLearningComputation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachineLearningComputation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TianchiSongPredict" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="predict_algorithm" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachineLearningComputation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MachineLearningComputation" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="TianchiSongPredict" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="data_process" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -268,7 +220,7 @@
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/BpNn" />
     <property name="recentsLimit" value="5" />
   </component>
   <component name="RecentsManager">
@@ -278,7 +230,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.bpnn">
+  <component name="RunManager" selected="Python.bpnn_predict">
     <configuration default="false" name="analyse_data" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -308,7 +260,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachineLearningComputation" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature_new.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -326,6 +278,23 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="MachineLearningComputation" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="bpnn_predict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TianchiSongPredict/predict" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="MachineLearningComputation" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TianchiSongPredict/predict/bpnn_predict.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -452,16 +421,18 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Python.analyse_data" />
       <item index="1" class="java.lang.String" itemvalue="Python.extract_feature" />
       <item index="2" class="java.lang.String" itemvalue="Python.bpnn" />
+      <item index="3" class="java.lang.String" itemvalue="Python.bpnn_predict" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.bpnn" />
-        <item index="1" class="java.lang.String" itemvalue="Python.extract_feature" />
-        <item index="2" class="java.lang.String" itemvalue="Python.analyse_data" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.bpnn_predict" />
+        <item index="1" class="java.lang.String" itemvalue="Python.bpnn" />
+        <item index="2" class="java.lang.String" itemvalue="Python.extract_feature" />
+        <item index="3" class="java.lang.String" itemvalue="Python.analyse_data" />
       </list>
     </recent_temporary>
   </component>
@@ -480,15 +451,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16060807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1473893" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31545338" sideWeight="0.50231326" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.11494253" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18646233" sideWeight="0.4976867" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
@@ -542,14 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/data_processing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="170" column="24" selection-start-line="170" selection-start-column="24" selection-end-line="170" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/lib/pymodules/python2.7/matplotlib/pyplot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -584,10 +547,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py">
+    <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/data_processing.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="28" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <caret line="153" column="3" selection-start-line="153" selection-start-column="3" selection-end-line="153" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -603,17 +566,43 @@
     <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/extract_feature.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/lib/python2.7/dist-packages/pybrain/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TianchiSongPredict/data_process/normailization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="26" selection-start-line="48" selection-start-column="26" selection-end-line="48" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TianchiSongPredict/predict_algorithm/bpnn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.48945785">
-          <caret line="203" column="42" selection-start-line="203" selection-start-column="0" selection-end-line="203" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="156" column="58" selection-start-line="156" selection-start-column="49" selection-end-line="156" selection-end-column="58" />
           <folding>
             <element signature="e#66#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TianchiSongPredict/predict/bpnn_predict.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7944079">
+          <caret line="89" column="32" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+          <folding>
+            <element signature="e#66#76#0" expanded="true" />
           </folding>
         </state>
       </provider>

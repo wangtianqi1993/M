@@ -6,6 +6,11 @@ import math
 import random
 import csv
 from numpy import *
+from pybrain.tools.shortcuts import buildNetwork
+from pybrain.datasets import SupervisedDataSet
+from pybrain.supervised.trainers import BackpropTrainer
+from pybrain.tools.xml.networkreader import NetworkReader
+from pybrain.tools.xml.networkwriter import NetworkWriter
 from TianchiSongPredict.data_process.extract_feature import extract_feature
 from TianchiSongPredict.data_process.normailization import auto_norm
 from TianchiSongPredict.data_process.normailization import auti_norm
@@ -116,7 +121,7 @@ class NN:
 
         return self.output
 
-    def back_propagate(self, iteration_times, sample_times, targets, learningrate, momentum):
+    def back_propagate(self, iteration_times, targets, momentum):
         """
 
         :param targets:  the ture output for the input
@@ -142,7 +147,7 @@ class NN:
             hidden_deltas[j] = dsigmoid(self.hidden_in[j]) * error
 
         # 动态调整学习步长，使其越来越小
-        learningrate = 4.0/(5.0+sample_times+iteration_times) + 0.005
+        learningrate = 0.1/(1+0.01*iteration_times) + 0.01
 
         # update output weights
         for j in range(self.numhidden):
@@ -170,7 +175,7 @@ class NN:
             error = error + (targets[k] - self.output[k])
         return error
 
-    def train(self, patterns, iterations=1000, learningrate=0.02, momentum=0.01):
+    def train(self, patterns, iterations=3500, learningrate=0.02, momentum=0.01):
         """
         training network a patterns
         :param patterns: the train sample
@@ -181,15 +186,14 @@ class NN:
         """
         for i in range(iterations):
             error = 0.0
-            simaple_times = 0
             for p in patterns:
                 inputs = p[0]
                 targets = p[1]
-                simaple_times += 1
+
                 # 采用随机梯度下降，对于一个特定样本用update()正向激活
                 # 再用back_propagate()反向计算误差
                 self.update(inputs)
-                error = error + self.back_propagate(i, simaple_times, targets, learningrate, momentum)
+                error = error + self.back_propagate(i, targets, momentum)
             print error
             if error >=0 and error<=5:
                 break
@@ -197,40 +201,9 @@ class NN:
             # logger.info('error %-.5f' % error)
 
 
-def predict(artist_id, file_path):
-    train_data, predict_data = extract_feature(artist_id)
-    # train_data = data[:80]
-    # test_data = data[80:]
-
-    network = NN(3, 3, 1)
-    network.train(train_data)
-    date_9 = 20150901
-    date_10 = 20151001
-
-    csvfile = file(file_path, 'a+')
-    write = csv.writer(csvfile)
-
-    for item in predict_data:
-
-        play_time1 = network.update(item[0])[0]
-        write.writerow([artist_id, str(play_time1), str(date_9)])
-        item[1].append(play_time1)
-        play_time2 = network.update(item[1])[0]
-        write.writerow([artist_id, str(play_time2), str(date_10)])
-        date_9 += 1
-        date_10 += 1
-    # sum = 0
-    # for item in test_data:
-    #     sum +=item[1][0] - network.update(item[0])[0]
-    # print sum
-
-
-
 if __name__ == '__main__':
 
     file_path = "/home/wtq/mars_tianchi_artist_plays_predict.csv"
-
-    predict()
 
     csvfile = file('/home/wtq/predict.csv', 'a+')
     write = csv.writer(csvfile)
