@@ -56,7 +56,7 @@ def pybrain_train(file_path):
 
     csvfile = file(file_path, 'a+')
     write = csv.writer(csvfile)
-
+    error = []
     for artist_id in artists:
         date_9 = 20150901
         date_10 = 20151001
@@ -74,26 +74,37 @@ def pybrain_train(file_path):
         # 生成并训练网络
         net = buildNetwork(3, 3, 1)
         trainer = BackpropTrainer(net, ds, verbose=True, learningrate=0.01)
-        trainer.trainEpochs(500)
-        trainer.trainUntilConvergence(maxEpochs=600)
+        trainer.trainEpochs(400)
+        trainer.trainUntilConvergence(maxEpochs=200)
 
         # using net to predict
-        for item in predict_data:
-            input = item[0]
-            input = tuple(map(lambda n: float(n) / max_data, input))
+        error_temp = 0
+        sign = 1
+        input = predict_data[0][0]
+
+        for i in range(0, 60):
+
+            input = list(map(lambda n: float(n) / max_data, input))
             out = net.activate(input)
+            # write.writerow([artist_id, item[1][0]-int(out*max_data), item[1][0], out*max_data])
             write.writerow([artist_id, str(int(out*max_data)), str(date_9)])
-
-            item[1].append(int(out*max_data))
-            input = item[1]
-            input = tuple(map(lambda n: float(n) / max_data, input))
-            out = net.activate(input)
-            write.writerow([artist_id, str(int(out*max_data)), str(date_10)])
-            print int(out*max_data)
+            input.pop(0)
+            input.append(int(out*max_data))
+            # error_temp += abs(item[1][0]-int(out*max_data))
+            # item[1].append(int(out*max_data))
+            # item[1][2] = int(out*max_data)
+            # input = item[1]
+            # input = tuple(map(lambda n: float(n) / max_data, input))
+            # out = net.activate(input)
+            # write.writerow([artist_id, str(int(out*max_data)), str(date_10)])
+            # print int(out*max_data)
             date_9 += 1
-            date_10 += 1
-
+            if date_9 > 20150930 and sign:
+                date_9 = 20151001
+                sign = 0
+            # date_10 += 1
+        # error.append(error_temp)
 
 if __name__ == '__main__':
     # bpnn_predict("/home/wtq/mars_tianchi_artist_plays_predict.csv")
-    pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict_new.csv")
+    pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict.csv")
