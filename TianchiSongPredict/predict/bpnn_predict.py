@@ -108,6 +108,7 @@ def pybrain_train(file_path):
             date_9 += 1
             date_10 += 1
 
+
 if __name__ == '__main__':
     # bpnn_predict("/home/wtq/mars_tianchi_artist_plays_predict.csv")
     pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict_end.csv")
