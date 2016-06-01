@@ -9,6 +9,7 @@ from pybrain.supervised.trainers import BackpropTrainer
 from pybrain.tools.xml.networkreader import NetworkReader
 from pybrain.tools.xml.networkwriter import NetworkWriter
 from TianchiSongPredict.data_process.conn_mongo import conn_mongo
+from TianchiSongPredict.data_process.standardization import standardization
 from TianchiSongPredict.data_process.normailization import get_list_max
 from TianchiSongPredict.data_process.extract_feature import extract_feature
 from TianchiSongPredict.predict_algorithm.bpnn import NN
@@ -52,59 +53,63 @@ def pybrain_train(file_path):
     :return:
     """
     artists = db.mars_song.distinct("artist_id")
-    ds = SupervisedDataSet(3, 1)
 
     csvfile = file(file_path, 'a+')
     write = csv.writer(csvfile)
-    error = []
+
     for artist_id in artists:
+
+        # 每一个艺人都要重新设计pybrain的数据，防止下一个艺人数据的叠加
+        ds = SupervisedDataSet(6, 1)
         date_9 = 20150901
         date_10 = 20151001
         train_data, predict_data = extract_feature(artist_id)
+
         max_data = get_list_max(train_data, predict_data)
 
+        # x_mat y_mat 为训练时使用的数据与标签 p_9与p_10为预测9月与10月所用的样本
+        x_mat = []
+        y_mat = []
+        p_9 = []
+        p_10 = []
+
+        # 数据标准化
+        for k in train_data:
+            x_mat.append(k[0])
+            y_mat.append(k[1])
+        x_mat, y_mat = standardization(x_mat, y_mat)
+
+
         # 加载训练数据到神经网络中
-        for p in train_data:
-            inputs = p[0]
-            targets = p[1]
-            inputs = tuple(map(lambda n: float(n) / max_data, inputs))
-            targets = tuple(map(lambda n: float(n) / max_data, targets))
+        for index in range(0, len(x_mat)):
+            inputs = x_mat[index]
+            targets = tuple(map(lambda n: float(n) / max_data, y_mat[index]))
             ds.addSample(inputs, targets)
 
-        # 生成并训练网络
-        net = buildNetwork(3, 3, 1)
+        net = buildNetwork(6, 8, 1)
         trainer = BackpropTrainer(net, ds, verbose=True, learningrate=0.01)
-        trainer.trainEpochs(400)
-        trainer.trainUntilConvergence(maxEpochs=200)
+        trainer.trainEpochs(800)
+        trainer.trainUntilConvergence(maxEpochs=800)
 
         # using net to predict
-        error_temp = 0
-        sign = 1
-        input = predict_data[0][0]
+        for item in predict_data:
+            p_9.append(item[0])
+            p_10.append(item[1])
 
-        for i in range(0, 60):
+        # 标准化预测值（减去均值，除以方差）
+        p_9, pt = standardization(p_9)
+        p_10, pt = standardization(p_10)
 
-            input = list(map(lambda n: float(n) / max_data, input))
-            out = net.activate(input)
-            # write.writerow([artist_id, item[1][0]-int(out*max_data), item[1][0], out*max_data])
-            write.writerow([artist_id, str(int(out*max_data)), str(date_9)])
-            input.pop(0)
-            input.append(int(out*max_data))
-            # error_temp += abs(item[1][0]-int(out*max_data))
-            # item[1].append(int(out*max_data))
-            # item[1][2] = int(out*max_data)
-            # input = item[1]
-            # input = tuple(map(lambda n: float(n) / max_data, input))
-            # out = net.activate(input)
-            # write.writerow([artist_id, str(int(out*max_data)), str(date_10)])
-            # print int(out*max_data)
+        for i in range(0, 30):
+            input_9 = p_9[i]
+            input_10 = p_10[i]
+            out_9 = net.activate(input_9)
+            write.writerow([artist_id, str(int(out_9*max_data)), str(date_9)])
+            out_10 = net.activate(input_10)
+            write.writerow([artist_id, str(int(out_10*max_data)), str(date_10)])
             date_9 += 1
-            if date_9 > 20150930 and sign:
-                date_9 = 20151001
-                sign = 0
-            # date_10 += 1
-        # error.append(error_temp)
+            date_10 += 1
 
 if __name__ == '__main__':
     # bpnn_predict("/home/wtq/mars_tianchi_artist_plays_predict.csv")
-    pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict.csv")
+    pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict_end.csv")
