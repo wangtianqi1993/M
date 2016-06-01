@@ -6,8 +6,6 @@ import csv
 from pybrain.tools.shortcuts import buildNetwork
 from pybrain.datasets import SupervisedDataSet
 from pybrain.supervised.trainers import BackpropTrainer
-from pybrain.tools.xml.networkreader import NetworkReader
-from pybrain.tools.xml.networkwriter import NetworkWriter
 from TianchiSongPredict.data_process.conn_mongo import conn_mongo
 from TianchiSongPredict.data_process.standardization import standardization
 from TianchiSongPredict.data_process.normailization import get_list_max
