@@ -31,9 +31,9 @@ def extract_feature(artist_id):
 
     for i in range(0, 180):
         if i < 90:
-            train_data = [play_times[i], play_times[i+30], play_times[i+60], download_times[i],
-                          download_times[i+30], download_times[i+60]]
-            # train_data = [play_times[i], play_times[i+30], play_times[i+60]]
+            # train_data = [play_times[i], play_times[i+30], play_times[i+60], download_times[i],
+                          # download_times[i+30], download_times[i+60]]
+            train_data = [play_times[i], play_times[i+30], play_times[i+60]]
             # train_data = [play_times[i], play_times[i+1], play_times[i+2]]
             label = [play_times[i+90]]
             # label = [play_times[i+3]]
@@ -42,10 +42,12 @@ def extract_feature(artist_id):
 
         # 生成预测样本的输入predict_times[0]对应9月，predict_times[1]对应10月
         if i < 30:
-            predict_data1 = [play_times[i+90], play_times[i+120], play_times[i+150], download_times[i+90],
-                             download_times[i+120], download_times[i+150]]
-
-            predict_data2 = [play_times[i+120], play_times[i+150], play_times[i+150], download_times[i+120], download_times[i+150], download_times[i+150]]
+            # predict_data1 = [play_times[i+90], play_times[i+120], play_times[i+150], download_times[i+90],
+            #                  download_times[i+120], download_times[i+150]]
+            #
+            # predict_data2 = [play_times[i+120], play_times[i+150], play_times[i+150], download_times[i+120], download_times[i+150], download_times[i+150]]
+            predict_data1 = [play_times[i+90], play_times[i+120], play_times[i+150]]
+            predict_data2 = [play_times[i+120], play_times[i+150], play_times[i+150]]
             temp = [predict_data1, predict_data2]
             predict_times.append(temp)
 

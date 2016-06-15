@@ -58,7 +58,7 @@ def pybrain_train(file_path):
     for artist_id in artists:
 
         # 每一个艺人都要重新设计pybrain的数据，防止下一个艺人数据的叠加
-        ds = SupervisedDataSet(6, 1)
+        ds = SupervisedDataSet(3, 1)
         date_9 = 20150901
         date_10 = 20151001
         train_data, predict_data = extract_feature(artist_id)
@@ -77,14 +77,13 @@ def pybrain_train(file_path):
             y_mat.append(k[1])
         x_mat, y_mat = standardization(x_mat, y_mat)
 
-
         # 加载训练数据到神经网络中
         for index in range(0, len(x_mat)):
             inputs = x_mat[index]
             targets = tuple(map(lambda n: float(n) / max_data, y_mat[index]))
             ds.addSample(inputs, targets)
 
-        net = buildNetwork(6, 8, 1)
+        net = buildNetwork(3, 5, 1)
         trainer = BackpropTrainer(net, ds, verbose=True, learningrate=0.01)
         trainer.trainEpochs(800)
         trainer.trainUntilConvergence(maxEpochs=800)
@@ -111,4 +110,21 @@ def pybrain_train(file_path):
 
 if __name__ == '__main__':
     # bpnn_predict("/home/wtq/mars_tianchi_artist_plays_predict.csv")
-    pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict_end.csv")
+    # pybrain_train("/home/wtq/mars_tianchi_artist_plays_predict_end.csv")
+
+    # print groupAnagrams(["aa", "ab", "ba"])
+    def test():
+        vv = ['ssssdfsas', 'fgg', 'sd', 'ds']
+        words = {}
+
+        for i in vv:
+
+            temp = tuple(sorted(i))
+
+            if temp not in words:
+                words[temp] = []
+
+            words[temp].append(i)
+        for j in words:
+            print words[j]
+    test()
